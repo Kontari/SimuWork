@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+# 
+# Requirements: 
+# firefox
+# xdotools
+# curl
+
+#check reqs
+
+
+PAGE="https://stackoverflow.com/?tab=week"
+
+# finds good links
+do_pull() {
+  curl ${1} | \
+  grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
+  sed -e 's/^<a href=["'"'"']//' -e 's/["'"'"']$//' | \
+  grep "questions" | \
+  egrep -v "https|tagged"
+}
+
+
+for i in `do_pull $PAGE`; 
+do
+
+  firefox $PAGE$i
+  sleep 3
+
+done
+
+#echo $LINKS
+
