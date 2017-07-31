@@ -25,7 +25,7 @@ do_pull() {
 
 
 # ~~~ MAIN ~~~
-setup_reqs
+#setup_reqs
 
 PAGE="https://stackoverflow.com/?tab=week"
 
