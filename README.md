@@ -1,2 +1,3 @@
 # SimuWork
-Working hard or hardly working?
+
+A collection of flashy scripts to liven up your workspace.
